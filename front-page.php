@@ -13,23 +13,44 @@
             </div>
         </section>
 
-        <section class="main-content">
+        <section class="posts-listing">
+            <?php if ( have_posts() ) : ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-            <div class="projects">
-                <img src="<?php echo esc_url(get_theme_mod('obrazek_box', '')); ?>" alt="<?php echo esc_attr(get_theme_mod('obrazek_box_alt', 'Domyślny alt dla obrazka')); ?>">  
-                <h3><?php echo get_theme_mod('naglowek_box', 'Domyślny naglowek boxa'); ?></h3>
-                <span><?php echo get_theme_mod('tekst_box', 'Domyślny opis boxa'); ?></span>
-            </div>
-            <div class="projects">
-                <img src="<?php echo esc_url(get_theme_mod('obrazek_box2', '')); ?>" alt="<?php echo esc_attr(get_theme_mod('obrazek_box_alt2', 'Domyślny alt dla obrazka')); ?>">  
-                <h3><?php echo get_theme_mod('naglowek_box2', 'Domyślny naglowek boxa'); ?></h3>
-                <span><?php echo get_theme_mod('tekst_box2', 'Domyślny opis boxa'); ?></span>
-            </div>
-            <div class="projects">
-                <img src="<?php echo esc_url(get_theme_mod('obrazek_box3', '')); ?>" alt="<?php echo esc_attr(get_theme_mod('obrazek_box_alt3', 'Domyślny alt dla obrazka')); ?>">  
-                <h3><?php echo get_theme_mod('naglowek_box3', 'Domyślny naglowek boxa'); ?></h3>
-                <span><?php echo get_theme_mod('tekst_box3', 'Domyślny opis boxa'); ?></span>
-            </div>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class('single-post'); ?>>
+                        
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <div class="post-thumbnail">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('medium'); ?>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+
+                        <h2 class="post-title">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </h2>
+
+                        <div class="post-meta">
+                            <span class="post-author">Autor: <?php the_author(); ?></span> | 
+                            <span class="post-date">Data: <?php echo get_the_date(); ?></span> | 
+                            <span class="post-category">Kategorie: <?php the_category(', '); ?></span>
+                        </div>
+
+                        <div class="post-excerpt">
+                            <?php the_excerpt(); ?>
+                        </div>
+
+                        <a href="<?php the_permalink(); ?>" class="read-more">
+                            Czytaj więcej;
+                        </a>
+
+                    </article>
+
+                <?php endwhile; ?>
+            <?php else : ?>
+                <p>Brak wpisów do wyświetlenia.</p>
+            <?php endif; ?>
         </section>
     </main>
 
