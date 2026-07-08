@@ -256,6 +256,60 @@ add_action( 'wp_enqueue_scripts', 'css_file' );
             'settings' => 'tekst_url_przycisku_ad_content',
             'type'     => 'text',
         ) );
+    // About_us_content
+        // Naglowek
+        $wp_customize->add_section( 'sekcja_about_us_content', array(
+            'title'    => 'Sekcja_about_us_content',
+            'priority' => 35,
+        ) );
+         $wp_customize->add_setting( 'naglowek_about_us_content', array(
+            'default'           => 'Domyślny naglowek',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'naglowek_about_us_content_control', array(
+            'label'    => 'Tekst naglowka',
+            'section'  => 'sekcja_about_us_content',
+            'settings' => 'naglowek_about_us_content',
+            'type'     => 'text',
+        ) );
+        // content
+         $wp_customize->add_setting( 'tekst_about_us_content', array(
+            'default'           => 'Domyślny tekst',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'tekst_about_us_content_control', array(
+            'label'    => 'Tekst w content',
+            'section'  => 'sekcja_about_us_content',
+            'settings' => 'tekst_about_us_content',
+            'type'     => 'text',
+        ) );
+    // content place
+        // Naglowek
+        $wp_customize->add_section( 'sekcja_content_place_content', array(
+            'title'    => 'Sekcja_content_place_content',
+            'priority' => 35,
+        ) );
+         $wp_customize->add_setting( 'naglowek_content_place_content', array(
+            'default'           => 'Domyślny naglowek',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'naglowek_content_place_content_control', array(
+            'label'    => 'Tekst naglowka',
+            'section'  => 'sekcja_content_place_content',
+            'settings' => 'naglowek_content_place_content',
+            'type'     => 'text',
+        ) );
+        // content
+         $wp_customize->add_setting( 'tekst_content_place_content', array(
+            'default'           => 'Domyślny tekst',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'tekst_content_place_content_control', array(
+            'label'    => 'Tekst w content',
+            'section'  => 'sekcja_content_place_content',
+            'settings' => 'tekst_content_place_content',
+            'type'     => 'text',
+        ) );
     }
     add_action( 'customize_register', 'moj_motyw_przyciski_customizer' );
 ?>

@@ -30,7 +30,6 @@
                 <h3><?php echo get_theme_mod('naglowek_box3', 'Domyślny naglowek boxa'); ?></h3>
                 <span><?php echo get_theme_mod('tekst_box3', 'Domyślny opis boxa'); ?></span>
             </div>
-
         </section>
     </main>
 
