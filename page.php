@@ -5,12 +5,11 @@
         <section>
 
             <div class="ad">
-                <img src="sunset.png" alt="Przykładowe zdjęcie">
+                <img src="<?php echo get_theme_mod('obrazek_ad_content','Wybierz obrazek'); ?>" alt="<?php echo get_theme_mod('alt_obrazek_ad_content', 'Przykladowe alt obrazka'); ?>">
                 <div class="ad_content">
-                    <h2>Przykładowy nagłowek</h2>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Consequatur fugit odio temporibus veritatis error. Omnis, error quod? Ab ad nulla ex ipsa esse, aliquam sequi, dicta porro aliquid vel dolor?</span>
-                    <a href="">Przykładowy link</a>
+                    <h2><?php echo get_theme_mod('naglowek_ad_content', 'Przykładowy nagłowek'); ?></h2>
+                    <span> <?php echo get_theme_mod('tekst_ad_content', 'Przykladowy tekst'); ?></span>
+                    <a href="<?php echo esc_url(get_theme_mod('tekst_url_przycisku_ad_content', '')); ?>"><?php echo esc_html(get_theme_mod('tekst_przycisku_ad_content', 'Przykladowy tekst przycisku')); ?></a>
                 </div>
             </div>
 

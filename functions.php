@@ -188,6 +188,74 @@ add_action( 'wp_enqueue_scripts', 'css_file' );
             'settings' => 'tekst_box3',
             'type'     => 'text',
         ) );
+    // page.php ad_content
+    // obrazek dla ad_content
+        $wp_customize->add_section( 'sekcja_ad_content', array(
+            'title'    => 'Sekcja_ad_content',
+            'priority' => 35,
+        ) );
+        $wp_customize->add_setting( 'obrazek_ad_content', array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'obrazek_ad_content', array(
+            'label'    => 'Wybierz obrazek dla ad',
+            'section'  => 'sekcja_ad_content',
+            'settings' => 'obrazek_ad_content',
+        ) ) );
+        $wp_customize->add_setting( 'alt_obrazek_ad_content', array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'obrazek_ad_section_control', array(
+            'label'    => 'Tekst alternatywny obrazka ALT',
+            'section'  => 'sekcja_ad_content',
+            'settings' => 'alt_obrazek_ad_content',
+            'type'     => 'text',
+        ) );
+    // nagłowek dla ad_content
+        $wp_customize->add_setting( 'naglowek_ad_content', array(
+            'default'           => 'Domyślny nagłowek',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'naglowek_ad_content_control', array(
+            'label'    => 'Tekst nagłowka',
+            'section'  => 'sekcja_ad_content',
+            'settings' => 'naglowek_ad_content',
+            'type'     => 'text',
+        ) );
+    // text dla ad_content
+        $wp_customize->add_setting( 'tekst_ad_content', array(
+            'default'           => 'Domyślny tekst',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'tekst_ad_content_control', array(
+            'label'    => 'Tekst dla ad_content_span',
+            'section'  => 'sekcja_ad_content',
+            'settings' => 'tekst_ad_content',
+            'type'     => 'text',
+        ) );
+    // text dla przycisku ad_section
+        $wp_customize->add_setting( 'tekst_przycisku_ad_content', array(
+            'default'           => 'Domyślny tekst',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'tekst_przycisku_ad_content_control', array(
+            'label'    => 'Tekst przycisku',
+            'section'  => 'sekcja_ad_content',
+            'settings' => 'tekst_przycisku_ad_content',
+            'type'     => 'text',
+        ) );
+         $wp_customize->add_setting( 'tekst_url_przycisku_ad_content', array(
+            'default'           => 'Domyślny URL',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'tekst_url_przycisku_ad_content_control', array(
+            'label'    => 'Tekst URL przycisku',
+            'section'  => 'sekcja_ad_content',
+            'settings' => 'tekst_url_przycisku_ad_content',
+            'type'     => 'text',
+        ) );
     }
     add_action( 'customize_register', 'moj_motyw_przyciski_customizer' );
 ?>
