@@ -15,6 +15,14 @@
     <header class="header">
 
         <nav class="menu-list">
+
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'header-menu-left',
+                'container_class' => 'header-menu-left'
+            ) );
+            ?>
+
             <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <?php bloginfo( 'name' ); ?>
                 </a>
@@ -22,10 +30,8 @@
 
             <?php
             wp_nav_menu( array(
-                'theme_location' => 'primary-menu',
-                'container'      => 'nav',
-                'container_class'=> 'site-navigation',
-                'menu_class'     => 'primary-menu-list',
+                'theme_location' => 'header-menu-right',
+                'container_class' => 'header-menu-right'
             ) );
             ?>
 

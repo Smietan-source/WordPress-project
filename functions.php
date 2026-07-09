@@ -153,8 +153,8 @@ add_action( 'after_setup_theme', 'logo_theme_setup' );
 <?php
 function menu_setup() {
     register_nav_menus( array(
-        'primary-menu' => __( 'Główne Menu', 'textdomain' ),
-        'footer-menu'  => __( 'Menu w Stopce', 'textdomain' ),
+        'header-menu-left' => __( 'Left-menu-header', 'textdomain' ),
+        'header-menu-right'  => __( 'Right-menu-header', 'textdomain' ),
     ) );
 }
 add_action( 'after_setup_theme', 'menu_setup' );
