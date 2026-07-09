@@ -48,6 +48,7 @@ body{
         list-style-type: none;
         margin: 0 15px;
         transition: scale 0.2s;
+        font-size: 1.3rem;
     }
     li:hover{
         scale: 1.2;
@@ -57,6 +58,14 @@ body{
         color: #000000;
         white-space: nowrap;
     }
+}
+.nav-logo img{
+    width: 8vw;
+    height: auto;
+    transition: scale 0.3s;
+}
+.nav-logo img:hover{
+    scale: 1.1;
 }
 /* front-page */
 .hero-section{

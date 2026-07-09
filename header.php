@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head() ?>
-    <?php
-        if ( function_exists( 'the_company_logo' ) ) {
-            the_company_logo();
-        }
-    ?>
 </head>
 <body>
     
@@ -23,10 +18,13 @@
             ) );
             ?>
 
-            <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                    <?php bloginfo( 'name' ); ?>
-                </a>
-            </h1>
+            <div class="nav-logo">
+                <?php
+                    if ( function_exists( 'the_custom_logo' ) ) {
+                        the_custom_logo();
+                    }
+                ?>
+            </div>
 
             <?php
             wp_nav_menu( array(

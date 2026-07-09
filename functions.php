@@ -127,30 +127,34 @@ add_action( 'wp_enqueue_scripts', 'css_file' );
     add_action( 'customize_register', 'moj_motyw_przyciski_customizer' );
 ?>
 <?php
+// obrazek w single.php
 function single_image() {
     add_theme_support( 'post-thumbnails' );
 }
-
 add_action( 'after_setup_theme', 'single_image' );
 ?>
 <?php
+// Tło w motywie
 function add_theme_setup() {
     add_theme_support('custom-background');
 }
 add_action('after_setup_theme', 'add_theme_setup');
 ?>
 <?php
+// Logo w karcie
 function logo_theme_setup() {
-    add_theme_support( 'company-logo', array(
+    add_theme_support( 'custom-logo', array(
         'height'      => 100,
         'width'       => 300,
         'flex-height' => true,
         'flex-width'  => true,
     ) );
+    add_image_size('small-thumbnail', 180, 200, true);
 }
 add_action( 'after_setup_theme', 'logo_theme_setup' );
 ?>
 <?php
+// Menu nawigacyjne
 function menu_setup() {
     register_nav_menus( array(
         'header-menu-left' => __( 'Left-menu-header', 'textdomain' ),
@@ -160,6 +164,7 @@ function menu_setup() {
 add_action( 'after_setup_theme', 'menu_setup' );
 ?>
 <?php
+// Znaczniki HTML5
 function HTML5() {
     add_theme_support( 'html5', array(
             'search-form',
@@ -172,4 +177,10 @@ function HTML5() {
         ) );
 }
 add_action( 'after_setup_theme', 'HTML5' );
+?>
+<?php 
+function my_theme_setup() {
+    add_theme_support( 'title-tag' );
+}
+add_action( 'after_setup_theme', 'my_theme_setup' );
 ?>
