@@ -150,3 +150,12 @@ function logo_theme_setup() {
 }
 add_action( 'after_setup_theme', 'logo_theme_setup' );
 ?>
+<?php
+function menu_setup() {
+    register_nav_menus( array(
+        'primary-menu' => __( 'Główne Menu', 'textdomain' ),
+        'footer-menu'  => __( 'Menu w Stopce', 'textdomain' ),
+    ) );
+}
+add_action( 'after_setup_theme', 'menu_setup' );
+?>
