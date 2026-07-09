@@ -109,6 +109,10 @@ body{
         background-color: #1087f7;
     }
 }
+.h3-posts{
+    text-align: center;
+    font-size: 3rem;
+}
 /* posty na front-page */
 .post-excerpt{
     padding: 2%;;

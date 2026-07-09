@@ -123,6 +123,21 @@ add_action( 'wp_enqueue_scripts', 'css_file' );
             'settings' => 'tekst_url_przycisku_ad_content',
             'type'     => 'text',
         ) );
+    // naglowek nad sekcja_posts
+        $wp_customize->add_section( 'sekcja_naglowku_posts', array(
+            'title'    => 'Naglowek_posts',
+            'priority' => 31,
+        ) );
+        $wp_customize->add_setting( 'tekst_naglowku', array(
+            'default'           => 'Naglowek',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'tekst_naglowku_control', array(
+            'label'    => 'Tekst przycisku',
+            'section'  => 'sekcja_naglowku_posts',
+            'settings' => 'tekst_naglowku',
+            'type'     => 'text',
+        ) );
     }
     add_action( 'customize_register', 'moj_motyw_przyciski_customizer' );
 ?>

@@ -13,7 +13,10 @@
             </div>
         </section>
         
+            <h3 class="h3-posts"><?php echo get_theme_mod('tekst_naglowku', 'tekst naglowka') ?></h3>
+
         <section class="posts-listing">
+
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post(); ?>
 
