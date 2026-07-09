@@ -16,26 +16,18 @@
         </section>
 
         <section class="about-us-section">
-            <div class="about-us_content">
-                <h3><?php echo esc_html( get_theme_mod( 'naglowek_about_us_content', 'About Us' ) ); ?></h3>
-                <span><?php echo esc_html( get_theme_mod( 'tekst_about_us_content', 'Przykładowy tekst o nas' ) ); ?></span>
-            </div>
-        </section>
+            <?php if( have_posts() ) :  ?>
+                <?php while ( have_posts() ): the_post(); ?>
 
-        <section class="page-content-section">
-            <div class="content_place">
-                <?php if ( have_posts() ) : ?>
-                    <?php while ( have_posts() ) : the_post(); ?>
+                    <div class="about-us_content">
+                        <h3><?php the_title(); ?></h3>
+                        <span><?php the_content(); ?></span>
+                    </div>
 
-                        <h1 class="page-title"><?php the_title(); ?></h1>
-
-                        <div class="entry-content">
-                            <?php the_content(); ?>
-                        </div>
-
-                    <?php endwhile; ?>
-                <?php endif; ?>
-            </div>
+                <?php endwhile ?>
+            <?php else : ?>
+                <p>Brak tresci do wyswietlenia</p>
+            <?php endif; ?>
         </section>
 
     </main>
