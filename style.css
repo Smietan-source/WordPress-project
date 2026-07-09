@@ -386,10 +386,6 @@ article div {
   font-size: 1rem;
 }
 
-article div p {
-  margin: 0;
-}
-
 .posts-navigation, .navigation {
   margin-top: 40px;
   padding-top: 20px;
@@ -411,4 +407,7 @@ article div p {
   text-decoration: none;
   border-radius: 6px;
   font-size: 1.3rem;
+}
+.navigation a:hover{
+    background-color: #0056b3;
 }
