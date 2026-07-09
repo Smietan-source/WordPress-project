@@ -189,6 +189,7 @@ body{
 .read-more:hover {
     background-color: #2980b9;
 }
+/* footer.php */
 .footer{
     background-color: rgba(208, 236, 255, 0.247);
     bottom: 0;
@@ -196,6 +197,25 @@ body{
     padding: 10px;
     width: auto;
     display: block;
+    margin-top: 10px;
+}
+.categories {
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    background-color: #3498db;
+    border-radius: 5px;
+    transition: scale 0.2s;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.categories:hover {
+    scale: 1.2;
 }
 /* page-about-us.php */
 .ad{
