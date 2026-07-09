@@ -159,3 +159,17 @@ function menu_setup() {
 }
 add_action( 'after_setup_theme', 'menu_setup' );
 ?>
+<?php
+function HTML5() {
+    add_theme_support( 'html5', array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+            'style',
+            'script',
+        ) );
+}
+add_action( 'after_setup_theme', 'HTML5' );
+?>
