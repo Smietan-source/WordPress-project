@@ -12,7 +12,7 @@
                 </a>
             </div>
         </section>
-
+        
         <section class="posts-listing">
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post(); ?>
