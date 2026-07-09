@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head() ?>
+    <?php
+        if ( function_exists( 'the_company_logo' ) ) {
+            the_company_logo();
+        }
+    ?>
 </head>
 <body>
     

@@ -134,8 +134,19 @@ function single_image() {
 add_action( 'after_setup_theme', 'single_image' );
 ?>
 <?php
-function theme_setup() {
+function add_theme_setup() {
     add_theme_support('custom-background');
 }
-add_action('after_setup_theme', 'theme_setup');
+add_action('after_setup_theme', 'add_theme_setup');
+?>
+<?php
+function logo_theme_setup() {
+    add_theme_support( 'company-logo', array(
+        'height'      => 100,
+        'width'       => 300,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ) );
+}
+add_action( 'after_setup_theme', 'logo_theme_setup' );
 ?>

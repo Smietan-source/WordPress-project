@@ -58,11 +58,12 @@ body{
         white-space: nowrap;
     }
 }
+/* front-page */
 .hero-section{
     width: 100%;
     margin-bottom: 50px;
 }
-.logo{
+.company-name{
     display: flex;
     width: 100%;
     align-items: center;

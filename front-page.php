@@ -2,7 +2,7 @@
 
     <main>
         <section class="hero-section">
-            <div class="logo">
+            <div class="company-name">
                 <h2><?php bloginfo('name'); ?></h2>
             </div>
             <div class="learn-more">
