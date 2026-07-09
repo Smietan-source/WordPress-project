@@ -411,3 +411,8 @@ article div {
 .navigation a:hover{
     background-color: #0056b3;
 }
+/* search-bar.php */
+.search-bar{
+    float: right;
+    margin-right: 1%;
+}

@@ -34,5 +34,8 @@
             ?>
 
         </nav>
+        <div class="search-bar">
+            <?php include 'search-bar.php'; ?>
+        </div>
 
     </header>
