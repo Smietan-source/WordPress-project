@@ -203,7 +203,7 @@ body{
     display: block;
     margin-top: 10px;
 }
-.categories {
+.box-categories {
     width: fit-content;
     text-align: center;
     margin: auto;
@@ -213,12 +213,12 @@ body{
     transition: scale 0.2s;
 }
 
-.categories a {
+.box-categories a {
     text-decoration: none;
     color: #ffffff;
 }
 
-.categories:hover {
+.box-categories:hover {
     scale: 1.2;
 }
 /* page-about-us.php */
