@@ -184,10 +184,15 @@ add_action( 'after_setup_theme', 'single_image' );
 ?>
 <?php
 // Tło w motywie
-function add_theme_setup() {
-    add_theme_support('custom-background');
+function moj_motyw_setup() {
+    add_theme_support( 'custom-background', array(
+        'default-color'      => 'ffffff',
+        'default-image'      => '',
+        'default-position-x' => 'center',
+        'default-attachment' => 'fixed',
+    ) );
 }
-add_action('after_setup_theme', 'add_theme_setup');
+add_action( 'after_setup_theme', 'moj_motyw_setup' );
 ?>
 <?php
 // Logo w karcie
