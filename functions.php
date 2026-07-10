@@ -238,3 +238,14 @@ function my_theme_setup() {
 }
 add_action( 'after_setup_theme', 'my_theme_setup' );
 ?>
+<?php 
+function moj_motyw_dodaj_google_fonts() {
+    wp_enqueue_style( 
+        'google-fonts-oswald',
+        'https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Yuyu&display=swap',
+        array(), 
+        null 
+    );
+}
+add_action( 'wp_enqueue_scripts', 'moj_motyw_dodaj_google_fonts' );
+?>
