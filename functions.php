@@ -4,6 +4,15 @@ function css_file() {
 }
 add_action( 'wp_enqueue_scripts', 'css_file' );
 ?>
+<?php 
+function js_file() {
+    wp_enqueue_script( 'custom-theme-script', get_template_directory_uri() . '/script.js',
+    array(), '1.0.0',
+    array( 'in_footer' => true ) 
+    );
+}
+add_action( 'wp_enqueue_scripts', 'js_file' );
+?>
 <?php
     if( function_exists('acf_add_options_page') ) {
         acf_add_options_page(array(
@@ -126,7 +135,7 @@ add_action( 'wp_enqueue_scripts', 'css_file' );
     // naglowek nad sekcja_posts
         $wp_customize->add_section( 'sekcja_naglowku_posts', array(
             'title'    => 'Naglowek_posts',
-            'priority' => 31,
+            'priority' => 36,
         ) );
         $wp_customize->add_setting( 'tekst_naglowku', array(
             'default'           => 'Naglowek',
@@ -136,6 +145,31 @@ add_action( 'wp_enqueue_scripts', 'css_file' );
             'label'    => 'Tekst przycisku',
             'section'  => 'sekcja_naglowku_posts',
             'settings' => 'tekst_naglowku',
+            'type'     => 'text',
+        ) );
+    // przyciski do nawigacji postami
+         $wp_customize->add_section( 'sekcja_nawigacji_postami', array(
+            'title'    => 'Navigation_posts',
+            'priority' => 37,
+        ) );
+        $wp_customize->add_setting( 'tekst_lewej_nawigacji', array(
+            'default'           => 'Poprzednie',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'tekst_nawigacji_lewej_control', array(
+            'label'    => 'Tekst przycisku lewego',
+            'section'  => 'sekcja_nawigacji_postami',
+            'settings' => 'tekst_lewej_nawigacji',
+            'type'     => 'text',
+        ) );
+         $wp_customize->add_setting( 'tekst_prawej_nawigacji', array(
+            'default'           => 'Nastepne',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( 'tekst_nawigacji_prawej_control', array(
+            'label'    => 'Tekst przycisku prawego',
+            'section'  => 'sekcja_nawigacji_postami',
+            'settings' => 'tekst_prawej_nawigacji',
             'type'     => 'text',
         ) );
     }

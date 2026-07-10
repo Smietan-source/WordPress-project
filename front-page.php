@@ -48,6 +48,11 @@
             <?php endif; ?>
         </section>
 
+        <div class="posts-nav">
+            <button class="previous"><?php echo get_theme_mod('tekst_lewej_nawigacji', 'Domyslny tekst lewej nawigacji') ?></button>
+            <button class="next"><?php echo get_theme_mod('tekst_prawej_nawigacji', 'Domyslny tekst prawej nawigacji') ?></button>
+        </div>
+
     </main>
 
 <?php get_footer() ?>

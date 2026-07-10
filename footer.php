@@ -1,14 +1,12 @@
-    <section>
-        <div class="box-categories">
-            <?php 
-                    
-            $categories = get_the_category();
+    <section class="footer-section">
+         <?php         
+            $categories = get_categories();
             foreach($categories as $category){
+                echo "<div class='box-categories'>";
                 echo "<a href='" . get_category_link($category->term_id) . "'>" . $category->cat_name . "</a>";
-            }
-                    
-            ?>
-        </div>
+                echo "</div>";
+            } 
+        ?>
     </section>
 
     <footer class="footer">

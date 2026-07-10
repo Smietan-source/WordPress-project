@@ -193,6 +193,26 @@ body{
 .read-more:hover {
     background-color: #2980b9;
 }
+.posts-nav{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 8%;
+    padding-right: 8%;
+    margin-bottom: 5%;
+    button{
+        height: auto;
+        width: auto;
+        padding: 1%;
+        font-size: 1.3rem;
+        background-color: #3498db;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+    }
+    button:hover{
+        background-color: #2980b9;
+    }
+}
 /* footer.php */
 .footer{
     background-color: rgba(208, 236, 255, 0.247);
@@ -206,7 +226,6 @@ body{
 .box-categories {
     width: fit-content;
     text-align: center;
-    margin: auto;
     padding: 20px;
     background-color: #3498db;
     border-radius: 5px;
@@ -220,6 +239,13 @@ body{
 
 .box-categories:hover {
     scale: 1.2;
+}
+.footer-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 /* page-about-us.php */
 .ad{
