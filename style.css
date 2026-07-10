@@ -193,26 +193,6 @@ body{
 .read-more:hover {
     background-color: #2980b9;
 }
-.posts-nav{
-    display: flex;
-    justify-content: space-between;
-    padding-left: 8%;
-    padding-right: 8%;
-    margin-bottom: 5%;
-    button{
-        height: auto;
-        width: auto;
-        padding: 1%;
-        font-size: 1.3rem;
-        background-color: #3498db;
-        color: #ffffff;
-        border: none;
-        border-radius: 5px;
-    }
-    button:hover{
-        background-color: #2980b9;
-    }
-}
 /* footer.php */
 .footer{
     background-color: rgba(208, 236, 255, 0.247);
@@ -461,8 +441,26 @@ article div {
 .navigation a:hover{
     background-color: #0056b3;
 }
-/* search-bar.php */
-.search-bar{
-    float: right;
-    margin-right: 1%;
+/* right-section-header */
+.right-section{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    .black-white-mode{
+        margin: 1%;
+        button{
+            background-color: transparent;
+            outline: 0;
+            border: none;
+        }
+        button svg{
+            height:10vh;
+            width: auto;
+            cursor: pointer;
+        }
+
+    }
+    .search-bar{
+        margin: 1%;
+    }
 }
