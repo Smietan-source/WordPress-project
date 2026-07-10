@@ -239,6 +239,7 @@ function my_theme_setup() {
 add_action( 'after_setup_theme', 'my_theme_setup' );
 ?>
 <?php 
+// dodanie google fonts
 function moj_motyw_dodaj_google_fonts() {
     wp_enqueue_style( 
         'google-fonts-oswald',
@@ -249,3 +250,44 @@ function moj_motyw_dodaj_google_fonts() {
 }
 add_action( 'wp_enqueue_scripts', 'moj_motyw_dodaj_google_fonts' );
 ?>
+<?php
+// podpiecie Swipera
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+function register_styles(){
+
+    wp_enqueue_style(
+        'swiper-css', 
+        get_template_directory_uri() . '/css/swiper-bundle.css', 
+        array(), 
+        '11.0.0'
+    );
+
+    wp_enqueue_style('style', get_stylesheet_uri(), array('swiper-css'), '1.0.0');
+}
+add_action('wp_enqueue_scripts', 'register_styles');
+
+
+function load_my_js(){
+    wp_enqueue_script(
+        'swiper-js', 
+        get_template_directory_uri() . '/js/swiper-bundle.min.js', 
+        array(), 
+        '11.0.0', 
+        true
+    );
+
+    wp_enqueue_script(
+        'moj-skrypt-galerii',
+        get_template_directory_uri() . '/js/script.js',
+        array('swiper-js'), 
+        '1.0.0',
+        true
+    );
+
+    wp_localize_script('moj-skrypt-galerii', 'themeData', array(
+        'themeUrl' => get_template_directory_uri()
+    ));
+}
