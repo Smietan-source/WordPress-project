@@ -479,3 +479,28 @@ body.dark-mode .about-us_content *,
 body.dark-mode .page-header *{
     color: #ffffff !important;
 }
+/* archive-zesp.php */
+.site-main-archive{
+    display: grid;
+}
+.team-archive-posts{
+    display: flex;
+    width: 25%;
+    height: auto;
+    border-radius: 10px;
+    padding: 1%;
+    background-color: #eeeeee;
+    margin: 10px;
+}
+.post-archive-team-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.team-archive-posts-box1{
+    margin: 2%;
+}
+.team-archive-posts-box2{
+    margin: 2%;
+}
