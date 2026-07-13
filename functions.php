@@ -3,17 +3,13 @@ function css_file() {
     wp_enqueue_style( 'custom-theme-style', get_stylesheet_directory_uri() . '/style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'css_file' );
-?>
-<?php 
 function js_file() {
-    wp_enqueue_script( 'custom-theme-script', get_template_directory_uri() . '/script.js',
+    wp_enqueue_script( 'custom-theme-script', get_template_directory_uri() . '/js/script.js',
     array(), '1.0.0',
     array( 'in_footer' => true ) 
     );
 }
 add_action( 'wp_enqueue_scripts', 'js_file' );
-?>
-<?php
     if( function_exists('acf_add_options_page') ) {
         acf_add_options_page(array(
             'page_title'    => 'Ustawienia motywu',
@@ -174,15 +170,11 @@ add_action( 'wp_enqueue_scripts', 'js_file' );
         ) );
     }
     add_action( 'customize_register', 'moj_motyw_przyciski_customizer' );
-?>
-<?php
 // obrazek w single.php
 function single_image() {
     add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'single_image' );
-?>
-<?php
 // Tło w motywie
 function moj_motyw_setup() {
     add_theme_support( 'custom-background', array(
@@ -193,8 +185,6 @@ function moj_motyw_setup() {
     ) );
 }
 add_action( 'after_setup_theme', 'moj_motyw_setup' );
-?>
-<?php
 // Logo w karcie
 function logo_theme_setup() {
     add_theme_support( 'custom-logo', array(
@@ -206,8 +196,6 @@ function logo_theme_setup() {
     add_image_size('small-thumbnail', 180, 200, true);
 }
 add_action( 'after_setup_theme', 'logo_theme_setup' );
-?>
-<?php
 // Menu nawigacyjne
 function menu_setup() {
     register_nav_menus( array(
@@ -216,8 +204,6 @@ function menu_setup() {
     ) );
 }
 add_action( 'after_setup_theme', 'menu_setup' );
-?>
-<?php
 // Znaczniki HTML5
 function HTML5() {
     add_theme_support( 'html5', array(
@@ -231,14 +217,10 @@ function HTML5() {
         ) );
 }
 add_action( 'after_setup_theme', 'HTML5' );
-?>
-<?php 
 function my_theme_setup() {
     add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'my_theme_setup' );
-?>
-<?php 
 // dodanie google fonts
 function moj_motyw_dodaj_google_fonts() {
     wp_enqueue_style( 
@@ -249,13 +231,10 @@ function moj_motyw_dodaj_google_fonts() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'moj_motyw_dodaj_google_fonts' );
-?>
-<?php
 // podpiecie Swipera
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-
 function register_styles(){
 
     wp_enqueue_style(
@@ -268,8 +247,6 @@ function register_styles(){
     wp_enqueue_style('style', get_stylesheet_uri(), array('swiper-css'), '1.0.0');
 }
 add_action('wp_enqueue_scripts', 'register_styles');
-
-
 function load_my_js(){
     wp_enqueue_script(
         'swiper-js', 
@@ -291,3 +268,31 @@ function load_my_js(){
         'themeUrl' => get_template_directory_uri()
     ));
 }
+// modyfikacja tytułu wpisu
+add_filter( 'the_title', 'custom_title' );
+function custom_title( $title ) {
+    if ( ! is_admin() ) {
+        return ' mój ' . $title;
+    }
+    return $title;
+}
+// modyfikacja menu logowania WP
+add_action('login_enqueue_scripts', 'custom_login_styles');
+function custom_login_styles() {
+    ?>
+    <style type="text/css">
+        body.login {
+            background-color: #94ffe8;
+        }
+        .login form {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .login #wp-submit {
+            background-color: #0c00b8;
+            border-radius: 5px;
+        }
+    </style>
+    <?php
+}
+?>
