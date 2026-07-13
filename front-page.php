@@ -16,10 +16,10 @@
             <h3 class="h3-posts"><?php echo get_theme_mod('tekst_naglowku', 'tekst naglowka') ?></h3>
 
         <section class="posts-listing">
-
+            <?php $i = 0; ?>
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post(); ?>
-
+                    <?php if( $i >= 3 ) break; ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class('single-post'); ?>>
 
                         <h2 class="post-title">
@@ -41,7 +41,7 @@
                         </a>
 
                     </article>
-
+                    <?php $i++; ?>
                 <?php endwhile; ?>
             <?php else : ?>
                 <p>Brak wpisów do wyświetlenia.</p>

@@ -29,7 +29,6 @@
                 <p>Brak tresci do wyswietlenia</p>
             <?php endif; ?>
         </section>
-
     </main>
 
 <?php get_footer(); ?>
