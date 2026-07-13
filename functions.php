@@ -282,15 +282,22 @@ function custom_login_styles() {
     ?>
     <style type="text/css">
         body.login {
-            background-color: #94ffe8;
+            background-color: #b9fdff;
         }
-        .login form {
+        #loginform {
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background-color: #dee7ff;
         }
         .login #wp-submit {
-            background-color: #0c00b8;
+            background-color: #5100d4;
             border-radius: 5px;
+        }
+        .login form input {
+            border: 1px solid #15ff00
+        }
+        .login #wp-submit:hover{
+            background-color: #020070;
         }
     </style>
     <?php
