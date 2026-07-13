@@ -517,7 +517,6 @@ body.dark-mode .page-header *{
     margin: 40px 20px;
     max-width: 1500px;
     height: auto;
-    color: #000000;
 }
 .opinions-archive-posts{
     display: flex;
@@ -540,4 +539,59 @@ body.dark-mode .page-header *{
 .opinions-archive-posts-box1{
     width:100%;
     text-align: center;
+    color: #000000;
+}
+.opinions-archive-posts-box2{
+    width:100%;
+    text-align: center;
+    color: #000000;
+}
+/* media queries na menu */
+@media (max-width: 768px) {
+    .menu-list{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin: auto;
+        height: auto;
+
+    div{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    ul{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    li{
+        list-style-type: none;
+        margin: 0 5px;
+        transition: scale 0.2s;
+        font-size: 0.9rem;
+    }
+    li:hover{
+        scale: 1.2;
+    }
+    a{
+        text-decoration: none;
+        color: #000000;
+        white-space: normal;
+        text-align: center;
+        font-size: 1.15rem;
+    }
+}
+.nav-logo img{
+    width: 25vw;
+    height: auto;
+    transition: scale 0.3s;
+}
+.nav-logo img:hover{
+    scale: 1.1;
+}
 }
