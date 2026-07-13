@@ -475,6 +475,7 @@ body.dark-mode .main-navigation a,
 body.dark-mode .header a,
 body.dark-mode .about-us_content p,
 body.dark-mode .about-us_section p,
-body.dark-mode .about-us_content * {
+body.dark-mode .about-us_content *, 
+body.dark-mode .page-header *{
     color: #ffffff !important;
 }

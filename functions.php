@@ -272,7 +272,7 @@ function load_my_js(){
 add_filter( 'the_title', 'custom_title' );
 function custom_title( $title ) {
     if ( ! is_admin() ) {
-        return ' mój ' . $title;
+        return '✨' . $title;
     }
     return $title;
 }
@@ -295,4 +295,44 @@ function custom_login_styles() {
     </style>
     <?php
 }
+// Dodanie portfolio
+function moj_register_portfolio_cpt() {
+    $labels = array(
+        'name'               => 'Portfolio',
+        'singular_name'      => 'Projekt',
+        'add_new_item'       => 'Dodaj nowy projekt',
+        'edit_item'          => 'Edytuj projekt',
+        'all_items'          => 'Portfolio',
+    );
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'has_archive'        => true,
+        'rewrite'            => array('slug' => 'portfolio'),
+        'supports'           => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'menu_icon'          => 'dashicons-portfolio',
+    );
+    register_post_type('portfolio', $args);
+}
+add_action('init', 'moj_register_portfolio_cpt');
+// Dodanie zakładki zespół
+function moj_register_zespol_cpt() {
+    $labels = array(
+        'name'               => 'Zespół',
+        'singular_name'      => 'Ludzie zespołu',
+        'add_new_item'       => 'Dodaj nową osobe zespołu',
+        'edit_item'          => 'Edytuj osoby zespołu',
+        'all_items'          => 'Zespół',
+    );
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'has_archive'        => true,
+        'rewrite'            => array('slug' => 'zespol'),
+        'supports'           => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'menu_icon'          => 'dashicons-groups',
+    );
+    register_post_type('zespół', $args);
+}
+add_action('init', 'moj_register_zespol_cpt');
 ?>
