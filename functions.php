@@ -335,4 +335,24 @@ function moj_register_zespol_cpt() {
     register_post_type('zespół', $args);
 }
 add_action('init', 'moj_register_zespol_cpt');
+// dodanie zakładki opinie
+function moj_register_opinie_cpt() {
+    $labels = array(
+        'name'               => 'Opinie',
+        'singular_name'      => 'Opinie',
+        'add_new_item'       => 'Dodaj nową opinie',
+        'edit_item'          => 'Edytuj opinie',
+        'all_items'          => 'Opinie',
+    );
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'has_archive'        => true,
+        'rewrite'            => array('slug' => 'zespol'),
+        'supports'           => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'menu_icon'          => 'dashicons-star-filled',
+    );
+    register_post_type('opinie', $args);
+}
+add_action('init', 'moj_register_opinie_cpt');
 ?>
