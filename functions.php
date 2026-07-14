@@ -279,25 +279,65 @@ function custom_title( $title ) {
 // modyfikacja menu logowania WP
 add_action('login_enqueue_scripts', 'custom_login_styles');
 function custom_login_styles() {
+    $background_url = get_stylesheet_directory_uri() . '/headerbackground.png';
+    $logo_url = get_stylesheet_directory_uri() . '/mugshot.jpg';
     ?>
     <style type="text/css">
-        body.login {
-            background-color: #b9fdff;
+        body {
+            background-image: url('<?php echo $background_url ?>') !important;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         #loginform {
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            background-color: #dee7ff;
+            background-image:linear-gradient(to bottom, #ffffff, #919191) ; 
+            color: #000000;
         }
         .login #wp-submit {
-            background-color: #5100d4;
+            background-color: #d3d3d3;
+            color: #000000;
             border-radius: 5px;
+            border: none;
         }
         .login form input {
-            border: 1px solid #15ff00
+            border: none;
         }
         .login #wp-submit:hover{
-            background-color: #020070;
+            background-color: #535353;
+            color: #ffffff;
+            border: none;
+        }
+        #login-message{
+            background-image: linear-gradient(to bottom, #afafaf, #ffffff);
+            color: #000000;
+            box-shadow: 1px 1px 50px #ffffff;
+            border-left-color: transparent;
+        }
+        #nav{
+            color: #000000;
+        }
+        input .button{
+            background-color: #000000;
+            color: #ffffff;
+        }
+        body.login .language-switcher input{
+            color: #ffffff !important;
+            background-color: #5c5c5c;
+            border: none;
+        }
+        .login #nav a, .login #backtoblog a{
+            color: #ffffff !important; 
+        }
+        .language-switcher label .dashicons{
+            color: #ffffff !important;
+        }
+        #login .wp-login-logo a{
+            background-image: url('<?php echo $logo_url ?>') !important;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
     </style>
     <?php

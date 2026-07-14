@@ -484,7 +484,7 @@ body.dark-mode .page-header *{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 10px;
-    margin: 40px 20px;
+    margin: 40px auto;
     max-width: 1200px;
     height: auto;
     color: #000000;
@@ -548,50 +548,50 @@ body.dark-mode .page-header *{
 }
 /* media queries na menu */
 @media (max-width: 768px) {
-    .menu-list{
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        margin: auto;
-        height: auto;
+        .menu-list{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin: auto;
+            height: auto;
 
-    div{
-        display: flex;
-        align-items: center;
-        list-style: none;
-        padding: 0;
-        margin: 0;
+        div{
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style-type: none;
+            margin: 0 5px;
+            transition: scale 0.2s;
+            font-size: 0.9rem;
+        }
+        li:hover{
+            scale: 1.2;
+        }
+        a{
+            text-decoration: none;
+            color: #000000;
+            white-space: normal;
+            text-align: center;
+            font-size: 1.15rem;
+        }
     }
-    ul{
-        display: flex;
-        align-items: center;
-        list-style: none;
-        padding: 0;
-        margin: 0;
+    .nav-logo img{
+        width: 25vw;
+        height: auto;
+        transition: scale 0.3s;
     }
-    li{
-        list-style-type: none;
-        margin: 0 5px;
-        transition: scale 0.2s;
-        font-size: 0.9rem;
+    .nav-logo img:hover{
+        scale: 1.1;
     }
-    li:hover{
-        scale: 1.2;
-    }
-    a{
-        text-decoration: none;
-        color: #000000;
-        white-space: normal;
-        text-align: center;
-        font-size: 1.15rem;
-    }
-}
-.nav-logo img{
-    width: 25vw;
-    height: auto;
-    transition: scale 0.3s;
-}
-.nav-logo img:hover{
-    scale: 1.1;
-}
 }
