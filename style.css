@@ -226,6 +226,12 @@ body{
     align-items: center;
     gap: 20px;
 }
+.blog_header{
+    margin:40px;
+    font-size: 2.0rem;
+    color: white;
+    text-align: center;
+}
 /* page-about-us.php */
 .ad{
     overflow: hidden;
@@ -439,6 +445,45 @@ article div {
 }
 .navigation a:hover{
     background-color: #0056b3;
+}
+/* filtrowanie archive.php */
+.archive_categories .portfolio-filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: 30px;
+    margin-right: 1%;
+}
+.archive_categories .portfolio-filter-form select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+.archive_categories .portfolio-filter-form select:focus {
+    border-color: #0073aa;
+}
+.archive_categories .portfolio-filter-form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.archive_categories .portfolio-filter-form button[type="submit"]:hover {
+    background-color: #005177;
 }
 /* right-section-header */
 .right-section{

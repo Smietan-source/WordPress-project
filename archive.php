@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <main class="site-main">
-  <?php $i = 0; ?>
   <?php if ( have_posts() ) : ?>
 
     <header class="page-header">
@@ -12,14 +11,12 @@
     </header>
 
     <?php while ( have_posts() ) : the_post(); ?>
-    <?php if( $i >= 3 ) break; ?>
 
       <article id="post-<?php the_ID(); ?>">
         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <div><?php the_excerpt(); ?></div>
       </article>
 
-    <?php $i++; ?>
     <?php endwhile; ?>
 
     <?php the_posts_navigation(); ?>

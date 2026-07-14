@@ -1,3 +1,7 @@
+    <div class="blog_header">
+        <h4>Kategorie Bloga</h4>
+    </div>
+    
     <section class="footer-section">
          <?php         
             $categories = get_categories();
