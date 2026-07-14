@@ -7,7 +7,7 @@
             </div>
             <div class="learn-more">
                 <span><?php echo get_theme_mod('tekst_span','tekst opisowy');?></span>
-                <a href="<?php echo esc_url(get_theme_mod('tekst_url', 'https://docs.google.com/document/d/1AfUyAJkm1jm-uisPB6aj-pijKPDsOFuNQkj3OVCD-qs/edit?pli=1&tab=t.0#heading=h.yka2fqmw5hqs')); ?>">
+                <a href="<?php echo esc_url(get_theme_mod('tekst_url', '')); ?>">
                 <?php echo esc_html(get_theme_mod('tekst_przycisku', 'Domyślny tekst linku')); ?>
                 </a>
             </div>
@@ -16,10 +16,16 @@
             <h3 class="h3-posts"><?php echo get_theme_mod('tekst_naglowku', 'tekst naglowka') ?></h3>
 
         <section class="posts-listing">
-            <?php $i = 0; ?>
-            <?php if ( have_posts() ) : ?>
-                <?php while ( have_posts() ) : the_post(); ?>
-                    <?php if( $i >= 3 ) break; ?>
+            <?php 
+            $recent_posts_query = new WP_Query(array(
+                'post_type'      => 'post',
+                'posts_per_page' => 3,
+            )); 
+            ?>
+
+            <?php if ( $recent_posts_query->have_posts() ) : ?>
+                <?php while ( $recent_posts_query->have_posts() ) : $recent_posts_query->the_post(); ?>
+                    
                     <article id="post-<?php the_ID(); ?>" <?php post_class('single-post'); ?>>
 
                         <h2 class="post-title">
@@ -37,12 +43,13 @@
                         </div>
 
                         <a href="<?php the_permalink(); ?>" class="read-more">
-                            Czytaj więcej;
+                            Czytaj więcej
                         </a>
 
                     </article>
-                    <?php $i++; ?>
+
                 <?php endwhile; ?>
+                <?php wp_reset_postdata();?>
             <?php else : ?>
                 <p>Brak wpisów do wyświetlenia.</p>
             <?php endif; ?>

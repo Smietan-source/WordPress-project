@@ -17,6 +17,7 @@
         </div>
         
         <div class="team-archive-posts-box2"><?php the_content(); ?></div>
+        
       </article>
 
     <?php endwhile; ?>

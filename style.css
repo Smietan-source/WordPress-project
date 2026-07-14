@@ -510,9 +510,9 @@ article div {
 }
 /* klasa do zmienia stylu strony na czarny */
 body.dark-mode {
-    background-color: black !important;
-    background-image: none !important;
-    color: #ffffff !important;
+    background-color: black;
+    background-image: none;
+    color: #ffffff;
 }
 
 body.dark-mode .nav-menu a, 
@@ -522,7 +522,7 @@ body.dark-mode .about-us_content p,
 body.dark-mode .about-us_section p,
 body.dark-mode .about-us_content *, 
 body.dark-mode .page-header *{
-    color: #ffffff !important;
+    color: #ffffff;
 }
 /* archive-zesp.php */
 .site-main-archive{
