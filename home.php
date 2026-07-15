@@ -2,15 +2,16 @@
 
 <section class="blog_categories">
 
-    <form method="GET" action="<?php echo esc_url( get_post_type_archive_link( 'blog' ) ); ?>" class="blog-filter-form">
+    <form method="GET" action="<?php echo esc_url( home_url( '/' . $wp->request ) ); ?>" class="blog-filter-form">
         
         <?php
         wp_dropdown_categories( array(
-            'show_option_all' => 'Kategorie postów',
+            'show_option_all' => 'Wszystkie posty',
             'taxonomy'        => 'category',
-            'name'            => 'category',
+            'name'            => 'category_name', 
+            'id'              => 'blog-category-dropdown',
             'value_field'     => 'slug',
-            'selected'        => isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '',
+            'selected'        => isset($_GET['category_name']) ? sanitize_text_field($_GET['category_name']) : '',
         ) );
         ?>
 
@@ -20,16 +21,39 @@
 </section>
 
 <main class="site-main">
-  <?php if ( have_posts() ) : ?>
+
+  <?php 
+  $selected_category = isset($_GET['category_name']) ? sanitize_text_field($_GET['category_name']) : '';
+
+  $args = array(
+      'post_type'      => 'post',
+      'posts_per_page' => 99,
+      'paged'          => max( 1, get_query_var( 'paged' ), get_query_var( 'page' ) ),
+  );
+
+  if ( ! empty( $selected_category ) && $selected_category !== '0' ) {
+      $args['category_name'] = $selected_category;
+  }
+
+  $blog_query = new WP_Query( $args );
+  ?>
+
+  <?php if ( $blog_query->have_posts() ) : ?>
 
     <header class="page-header">
-      <?php
-        the_archive_title( '<h1 class="page-title">', '</h1>' );
-        the_archive_description( '<div class="archive-description">', '</div>' );
-      ?>
+      <h1 class="page-title">
+        <?php 
+        if ( ! empty( $selected_category ) && $selected_category !== '0' ) {
+            $category = get_term_by( 'slug', $selected_category, 'category' );
+            echo 'Kategoria: ' . esc_html( $category->name );
+        } else {
+            echo 'Blog';
+        }
+        ?>
+      </h1>
     </header>
 
-    <?php while ( have_posts() ) : the_post(); ?>
+    <?php while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
 
       <article id="post-<?php the_ID(); ?>">
         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -38,10 +62,8 @@
 
     <?php endwhile; ?>
 
-    <?php the_posts_navigation(); ?>
-
   <?php else : ?>
-    <p>Brak wpisów w tym archiwum.</p>
+    <p>Brak wpisów w wybranej kategorii.</p>
   <?php endif; ?>
 
 </main>
