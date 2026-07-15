@@ -1,5 +1,24 @@
 <?php get_header(); ?>
 
+<section class="blog_categories">
+
+    <form method="GET" action="<?php echo esc_url( get_post_type_archive_link( 'blog' ) ); ?>" class="blog-filter-form">
+        
+        <?php
+        wp_dropdown_categories( array(
+            'show_option_all' => 'Kategorie postów',
+            'taxonomy'        => 'category',
+            'name'            => 'category',
+            'value_field'     => 'slug',
+            'selected'        => isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '',
+        ) );
+        ?>
+
+        <button type="submit">Filtruj</button>
+    </form>
+
+</section>
+
 <main class="site-main">
   <?php if ( have_posts() ) : ?>
 

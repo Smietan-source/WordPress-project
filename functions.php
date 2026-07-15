@@ -379,7 +379,7 @@ function moj_register_zespol_cpt() {
         'supports'           => array('title', 'editor', 'thumbnail', 'excerpt'),
         'menu_icon'          => 'dashicons-groups',
     );
-    register_post_type('zespół', $args);
+    register_post_type('zespol', $args);
 }
 add_action('init', 'moj_register_zespol_cpt');
 // dodanie zakładki opinie
@@ -395,7 +395,7 @@ function moj_register_opinie_cpt() {
         'labels'             => $labels,
         'public'             => true,
         'has_archive'        => true,
-        'rewrite'            => array('slug' => 'zespol'),
+        'rewrite'            => array('slug' => 'opinie'),
         'supports'           => array('title', 'editor', 'thumbnail', 'excerpt'),
         'menu_icon'          => 'dashicons-star-filled',
     );

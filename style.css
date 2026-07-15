@@ -640,3 +640,42 @@ body.dark-mode .page-header *{
         scale: 1.1;
     }
 }
+/* blog filtrowanie */
+.blog_categories .blog-filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: 30px;
+    margin-right: 1%;
+}
+.blog_categories .blog-filter-form select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+.blog_categories .blog-filter-form select:focus {
+    border-color: #0073aa;
+}
+.blog_categories .blog-filter-form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.blog_categories .blog-filter-form button[type="submit"]:hover {
+    background-color: #005177;
+}
