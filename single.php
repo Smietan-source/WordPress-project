@@ -33,6 +33,11 @@
                         </footer>
 
                     </article>
+                    
+                    <div class="cta">
+                        <h2><?php the_field('cta_title'); ?></h2>
+                        <a href="<?php the_field('cta_button_link'); ?>"><?php the_field('cta_button_text'); ?></a>
+                    </div>
 
                     <nav class="post-navigation">
                         <div class="nav-previous"><?php previous_post_link('%link', '&larr; %title'); ?></div>
