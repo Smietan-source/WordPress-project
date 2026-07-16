@@ -1,15 +1,14 @@
 <?php get_header() ?>
 
+<main id="primary" class="site-main">
+    <?php
+    while ( have_posts() ) :
+        the_post();
 
-<?php
-    while(have_posts()){
-        the_post(); ?>
-        <div>
-            <h2>
-                <a href="<?php the_permalink() ?>"><?php the_title() ?></a>    
-            </h2>
-        </div>
-    <?php }
-?>
+        the_content();
+
+    endwhile; 
+    ?>
+</main>
 
 <?php get_footer() ?>

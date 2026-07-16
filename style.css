@@ -193,14 +193,64 @@ body{
     background-color: #2980b9;
 }
 /* footer.php */
-.footer{
-    background-color: rgba(208, 236, 255, 0.247);
-    bottom: 0;
-    left: 0;
-    padding: 10px;
-    width: auto;
+.site-footer {
+    background-color: #f8f9fa;
+    color: #333333;
+    padding: 20px 40px;
+    padding-left: 60px;
+    font-size: 14px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    height: auto;
+}
+
+.site-footer > img {
+    max-width: 100px;
+    height: auto;
     display: block;
-    margin-top: 10px;
+    margin: 0;
+}
+
+.social-media-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.social-media-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 12px;
+}
+
+.social-media-footer li {
+    margin: 0;
+    padding: 0;
+}
+
+.social-media-footer a {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-media-footer a:hover {
+    transform: translateY(-3px);
+    opacity: 0.7;
+}
+
+.social-media-footer img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block; 
 }
 /* page-about-us.php */
 .ad{
