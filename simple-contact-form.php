@@ -16,7 +16,14 @@ class SimpleContactForm {
 
     public function __construct() 
     {
+        // Create custom post type
         add_action('init', array($this, 'create_custom_post_type'));
+
+        // Add assets (js, css), etc
+        add_action('wp_enqueue_scripts', array($this, 'load_assets'));
+
+        // Add shortcode
+        add_shortcode('contact-form', array($this, 'load_shortcode'));
     }
 
     public function create_custom_post_type() 
@@ -37,6 +44,39 @@ class SimpleContactForm {
 
         register_post_type('simple_contact_form', $args);
     }
+
+    public function load_assets()
+    {
+        wp_enqueue_style( 
+            'simple-contact-form',
+            plugin_dir_url(__FILE__) . 'css/simple-contact-form.css',
+            array(),
+            1,
+            'all'
+        );
+    }
+
+    public function load_shortcode()
+    {?>
+
+        <div class="simple-contact-form">
+                <h2>Send us an email</h2>
+                <p>Please fill the below form</p>
+
+            <form id="contact-form"> 
+
+                <input name="name" type="text" placeholder="Name">
+                <input name="email" type="email" placeholder="Email">
+                <input name="phone" type="tel" placeholder="Phone">
+
+                <textarea name="message" placeholder="type your message"></textarea>
+                
+                <button class="contact-form-btn">Send Message</button>
+
+            </form>
+        </div>
+
+    <?php }
 
 }
 

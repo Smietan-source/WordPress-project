@@ -1,0 +1,30 @@
+.simple-contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.simple-contact-form > h2{
+    margin-bottom:15px;
+    font-size: 2vw;
+}
+.simple-contact-form > p{
+    font-size: 1.3vw;
+    margin-bottom:15px;
+}
+#contact-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 10px;
+}
+#contact-form input{
+    padding: 5px;
+}
+#contact-form button{
+    width: fit-content;
+    padding: 10px;
+    background-color: #007a2f;
+    margin: auto;
+    border: none;
+}
