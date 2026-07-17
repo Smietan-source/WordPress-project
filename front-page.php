@@ -6,7 +6,7 @@
                 <h2><?php bloginfo('name'); ?></h2>
             </div>
             <div class="learn-more">
-                <span><?php echo get_theme_mod('tekst_span','tekst opisowy');?></span>
+                <span><?php echo esc_html( get_theme_mod('tekst_span','tekst opisowy'));?></span>
                 <a href="<?php echo esc_url(get_theme_mod('tekst_url', '')); ?>">
                 <?php echo esc_html(get_theme_mod('tekst_przycisku', 'Domyślny tekst linku')); ?>
                 </a>
@@ -29,7 +29,7 @@
                     <article id="post-<?php the_ID(); ?>" <?php post_class('single-post'); ?>>
 
                         <h2 class="post-title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            <a href="<?php echo esc_url( the_permalink() ); ?>"><?php echo esc_html( the_title() ); ?></a>
                         </h2>
 
                         <div class="post-meta">

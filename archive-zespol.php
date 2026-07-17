@@ -8,7 +8,7 @@
       <article class="team-archive-posts">
 
         <div class="team-archive-posts-box1">
-          <h2><?php the_title(); ?></h2>
+          <h2><?php echo esc_html( the_title() ); ?></h2>
           <?php if ( has_post_thumbnail() ) : ?>
             <div class="post-archive-team-image">
               <?php the_post_thumbnail('small'); ?>
