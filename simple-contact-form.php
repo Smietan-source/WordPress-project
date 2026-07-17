@@ -145,6 +145,12 @@ class SimpleContactForm {
             'post_title' => 'Contact enquiry',
             'post_status' => 'publish'
         ));
+
+        if($post_id)
+            {
+                return new WP_REST_Response('Thank you for your email', 200);    
+            }
+
     }
 
 
