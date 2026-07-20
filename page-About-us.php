@@ -20,7 +20,7 @@
                 <?php while ( have_posts() ): the_post(); ?>
 
                     <div class="about-us_content">
-                        <h3><?php esc_html( the_title() ); ?></h3>
+                        <h3><?php the_title(); ?></h3>
                         <span><?php the_content(); ?></span>
                     </div>
 

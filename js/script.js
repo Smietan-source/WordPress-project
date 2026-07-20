@@ -11,3 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+const url = 'http://localhost:7000/wp-json/wp/v2/posts';
+
+fetch(url)
+    .then(response => {
+        if(!response.ok) {
+            throw new Error('Problem z pobraniem danych: ' +response.status);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Pobrane wpisy w formacie JSON:');
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Wystąpił błąd:', error);
+    });
