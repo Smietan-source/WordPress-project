@@ -207,6 +207,7 @@ body{
     flex-wrap: wrap;
     gap: 25px;
     height: auto;
+    box-shadow: 10px 10px 50px #ffffff;
 }
 
 .site-footer > img {
@@ -380,7 +381,7 @@ body{
 /* archive.php */
 .site-main {
   max-width: 800px;
-  margin: 40px auto;
+  margin: 80px auto;
   padding: 0 20px;
   color: #333333;
   line-height: 1.6;

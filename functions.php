@@ -271,7 +271,7 @@ function load_my_js(){
 // modyfikacja tytułu wpisu
 add_filter( 'the_title', 'custom_title' );
 function custom_title( $title ) {
-    if ( ! is_admin() ) {
+    if (in_the_loop() && is_main_query() && is_single() ) {
         return '✨' . $title;
     }
     return $title;
