@@ -10,5 +10,5 @@ $search_query = isset($_GET['q']) ? htmlspecialchars($_GET['q'], ENT_QUOTES, 'UT
         placeholder="Search..." 
         required
     >
-    <button type="submit">Search</button>
+    <button type="submit"><?php echo file_get_contents(get_theme_file_path('search-svgrepo-com.svg')); ?></button>
 </form>
