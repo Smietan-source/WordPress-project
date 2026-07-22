@@ -33,12 +33,14 @@
             ) );
             ?>
 
+             <div class="black-white-mode">
+                <button class="mode"><?php echo file_get_contents(get_theme_file_path('sun.svg')); ?></button>
+            </div>
+
+
         </nav>
 
         <section class="right-section">
-            <div class="black-white-mode">
-                <button class="mode"><?php echo file_get_contents(get_theme_file_path('sun.svg')); ?></button>
-            </div>
 
             <div class="search-bar">
                 <?php include 'search-bar.php'; ?>
