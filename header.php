@@ -11,27 +11,29 @@
 
         <nav class="menu-list">
 
-            <?php
-            wp_nav_menu( array(
-                'theme_location' => 'header-menu-left',
-                'container_class' => 'header-menu-left'
-            ) );
-            ?>
-
-            <div class="nav-logo">
+            <div class="nav-box">
                 <?php
-                    if ( function_exists( 'the_custom_logo' ) ) {
-                        the_custom_logo();
-                    }
+                wp_nav_menu( array(
+                    'theme_location' => 'header-menu-left',
+                    'container_class' => 'header-menu-left'
+                ) );
+                ?>
+
+                <div class="nav-logo">
+                    <?php
+                        if ( function_exists( 'the_custom_logo' ) ) {
+                            the_custom_logo();
+                        }
+                    ?>
+                </div>
+
+                <?php
+                wp_nav_menu( array(
+                    'theme_location' => 'header-menu-right',
+                    'container_class' => 'header-menu-right'
+                ) );
                 ?>
             </div>
-
-            <?php
-            wp_nav_menu( array(
-                'theme_location' => 'header-menu-right',
-                'container_class' => 'header-menu-right'
-            ) );
-            ?>
 
              <div class="black-white-mode">
                 <button class="mode"><?php echo file_get_contents(get_theme_file_path('sun.svg')); ?></button>

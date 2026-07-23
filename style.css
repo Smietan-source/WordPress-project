@@ -28,6 +28,7 @@ body{
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
+    position: relative;
 
     div{
         display: flex;
@@ -65,6 +66,9 @@ body{
 }
 .nav-logo img:hover{
     scale: 1.1;
+}
+.menu-list .nav-box{
+    margin: auto;
 }
 /* front-page */
 .hero-section{
@@ -121,7 +125,7 @@ body{
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 40px auto 240px;
     padding: 0 20px;
 }
 .single-post {
@@ -516,20 +520,22 @@ article div {
     }
 }
 /* dark mode */
-.black-white-mode{
-        margin: 1%;
+.menu-list .black-white-mode{
+    position: absolute;
+    right: 0;
         button{
             background-color: transparent;
             outline: 0;
             border: none;
         }
         button svg{
-            height:7vh;
+            height:9vh;
             width: auto;
             cursor: pointer;
         }
 
     }
+/* search-bar */
 .search-bar-form{
     display: flex;
     border-radius: 20px;
